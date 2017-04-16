@@ -6,22 +6,22 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 
-public class Login extends AppCompatActivity {
-    Button signUpBtn;
+public class SignUpActivity extends AppCompatActivity {
+    Button toSignInBtn;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_login);
+        setContentView(R.layout.activity_sign_up);
 
-        signUpBtn = (Button)findViewById(R.id.sign_up_btn);
+        toSignInBtn = (Button) findViewById(R.id.to_sign_in_btn);
 
-        signUpBtn.setOnClickListener(new View.OnClickListener() {
+        toSignInBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
 
-                Intent toSignUpFormIntent = new Intent(Login.this, SignUpActivity.class);
-                startActivity(toSignUpFormIntent);
+                Intent toSignInFormIntent = new Intent(SignUpActivity.this, Login.class);
+                startActivity(toSignInFormIntent);
             }
         });
     }
