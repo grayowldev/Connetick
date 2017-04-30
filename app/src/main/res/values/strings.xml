@@ -2,4 +2,5 @@
     <string name="app_name">Connetick</string>
     <string name="log_in">Log in</string>
     <string name="facebook_login">LOG IN WITH FACEBOOK</string>
+    <string name="google_login">Sign in with Google</string>
 </resources>
