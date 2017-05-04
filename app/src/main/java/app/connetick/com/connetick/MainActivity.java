@@ -1,5 +1,6 @@
 package app.connetick.com.connetick;
 
+import android.content.Intent;
 import android.os.AsyncTask;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -14,10 +15,11 @@ import java.io.IOException;
 import java.net.Socket;
 
 public class MainActivity extends AppCompatActivity {
-    Button testBtn;
+    Button testBtn, recycBtn;
     EditText editTextView;
     TextView areaView;
     int portNumber = 4200;
+    String serverIP = "192.168.1.16";
 
 
     DataOutputStream dataOut = null;
@@ -29,6 +31,7 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
         testBtn = (Button) findViewById(R.id.test_btn);
+        recycBtn = (Button) findViewById(R.id.recyc_button);
         editTextView = (EditText) findViewById(R.id.text_view_test);
         areaView = (TextView) findViewById(R.id.area_view);
 
@@ -40,20 +43,25 @@ public class MainActivity extends AppCompatActivity {
 /**
                 new Thread(){
                     public void run(){
-
                     }
                 }.start();
 **/
                 double radius = Double.parseDouble(editTextView.getText().toString().trim());
                 NetworkRunner area = new NetworkRunner();
-                area.execute(radius);
+
                 areaView.setText("");
-                areaView.setText("radius is: " + radius + '\n');
-                areaView.append("area is: " + area + '\n');
+                //areaView.setText("radius is: " + radius + '\n');
+                area.execute(radius);
+                //areaView.append("area is: " + area + '\n');
 
+            }
+        });
 
-
-
+        recycBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent toRecycActNtt = new Intent(MainActivity.this, RecycTest.class);
+                startActivity(toRecycActNtt);
             }
         });
 /**
@@ -62,22 +70,19 @@ public class MainActivity extends AppCompatActivity {
             System.out.println("local port: " + socket.getLocalPort());
             dataIn = new DataInputStream(socket.getInputStream());
             dataOut = new DataOutputStream(socket.getOutputStream());
-
         }
         catch (Exception e){
             areaView.append(e.toString() + '\n');
-
         }
  **/
-
     }
 
-    public class NetworkRunner extends AsyncTask<Double,String, Double>{
+    public class NetworkRunner extends AsyncTask<Double,String, String>{
 
         @Override
-        protected Double doInBackground(Double... doubles) {
+        protected String doInBackground(Double... doubles) {
             try{
-                Socket socket = new Socket("localHost",portNumber);
+                Socket socket = new Socket(serverIP,portNumber);
                 dataIn = new DataInputStream(socket.getInputStream());
                 dataOut = new DataOutputStream(socket.getOutputStream());
 
@@ -87,15 +92,29 @@ public class MainActivity extends AppCompatActivity {
                 dataOut.flush();
 
                 double area = dataIn.readDouble();
-                return area;
+                String stringArea = String.valueOf(area);
+                //return area;
+                return stringArea;
 
             }
             catch (Exception e){
-
+                System.out.println(e);
+                return null;
             }
-            return 9.87;
+
+        }
+
+        @Override
+        protected void onPostExecute(String aString) {
+            super.onPostExecute(aString);
+            areaView.append("area is: " + aString);
         }
     }
+
+    //public String networkArea(){
+
+        //return null;
+    //}
 
 /**
         @Override
