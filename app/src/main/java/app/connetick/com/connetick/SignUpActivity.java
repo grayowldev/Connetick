@@ -24,5 +24,20 @@ public class SignUpActivity extends AppCompatActivity {
                 startActivity(toSignInFormIntent);
             }
         }); **/
+
+        findViewById(R.id.signup_btn_signup).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                startActivity(new Intent(SignUpActivity.this, MainActivity.class));
+            }
+        });
+
+        findViewById(R.id.signin_btn_signup).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(SignUpActivity.this,StartActivity.class));
+            }
+        });
     }
 }
