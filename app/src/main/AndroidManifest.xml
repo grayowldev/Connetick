@@ -21,7 +21,8 @@
         <activity android:name=".MainActivity" />
         <activity android:name=".SignUpActivity" />
         <activity android:name=".Login" />
-        <activity android:name=".RecycTest"></activity>
+        <activity android:name=".RecycTest" />
+        <activity android:name=".ForgotPasswordActivity"></activity>
     </application>
 
 </manifest>

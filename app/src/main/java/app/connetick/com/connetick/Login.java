@@ -34,5 +34,12 @@ public class Login extends AppCompatActivity {
                 startActivity(loginIntent);
             }
         });
+
+        findViewById(R.id.forgot_pass_btn_login).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(Login.this,ForgotPasswordActivity.class));
+            }
+        });
     }
 }
