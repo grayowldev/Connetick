@@ -13,7 +13,7 @@ public class SignUpActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_sign_up);
-
+/**
         toSignInBtn = (Button) findViewById(R.id.to_sign_in_btn);
 
         toSignInBtn.setOnClickListener(new View.OnClickListener() {
@@ -23,6 +23,6 @@ public class SignUpActivity extends AppCompatActivity {
                 Intent toSignInFormIntent = new Intent(SignUpActivity.this, Login.class);
                 startActivity(toSignInFormIntent);
             }
-        });
+        }); **/
     }
 }
