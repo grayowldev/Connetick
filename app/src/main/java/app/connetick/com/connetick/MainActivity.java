@@ -72,6 +72,13 @@ public class MainActivity extends AppCompatActivity {
                 setContentView(R.layout.card_layout_model);
             }
         });
+
+        findViewById(R.id.button7).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(MainActivity.this,CompletionFormActivity.class));
+            }
+        });
 /**
         try {
             Socket socket = new Socket("192.168.1.3", portNumber);

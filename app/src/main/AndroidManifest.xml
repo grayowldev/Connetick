@@ -22,7 +22,8 @@
         <activity android:name=".SignUpActivity" />
         <activity android:name=".Login" />
         <activity android:name=".RecycTest" />
-        <activity android:name=".ForgotPasswordActivity"></activity>
+        <activity android:name=".ForgotPasswordActivity" />
+        <activity android:name=".CompletionFormActivity"></activity>
     </application>
 
 </manifest>
