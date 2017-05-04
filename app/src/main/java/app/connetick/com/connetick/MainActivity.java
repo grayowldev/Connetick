@@ -15,7 +15,7 @@ import java.io.IOException;
 import java.net.Socket;
 
 public class MainActivity extends AppCompatActivity {
-    Button testBtn, recycBtn;
+    Button testBtn, recycBtn, toCard;
     EditText editTextView;
     TextView areaView;
     int portNumber = 4200;
@@ -32,6 +32,7 @@ public class MainActivity extends AppCompatActivity {
 
         testBtn = (Button) findViewById(R.id.test_btn);
         recycBtn = (Button) findViewById(R.id.recyc_button);
+        toCard = (Button) findViewById(R.id.to_card_model);
         editTextView = (EditText) findViewById(R.id.text_view_test);
         areaView = (TextView) findViewById(R.id.area_view);
 
@@ -62,6 +63,13 @@ public class MainActivity extends AppCompatActivity {
             public void onClick(View v) {
                 Intent toRecycActNtt = new Intent(MainActivity.this, RecycTest.class);
                 startActivity(toRecycActNtt);
+            }
+        });
+
+        toCard.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                setContentView(R.layout.card_layout_model);
             }
         });
 /**
