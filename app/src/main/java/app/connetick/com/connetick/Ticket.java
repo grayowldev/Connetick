@@ -7,6 +7,8 @@ package app.connetick.com.connetick;
 public class Ticket {
     int id;
     String sender,subject,body;
+    boolean accepted, completed;
+
 
 
     public int getId() {
@@ -39,5 +41,21 @@ public class Ticket {
 
     public void setBody(String body) {
         this.body = body;
+    }
+
+    public boolean isAccepted() {
+        return accepted;
+    }
+
+    public void setAccepted(boolean accepted) {
+        this.accepted = accepted;
+    }
+
+    public boolean isCompleted() {
+        return completed;
+    }
+
+    public void setCompleted(boolean completed) {
+        this.completed = completed;
     }
 }
