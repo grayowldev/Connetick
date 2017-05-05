@@ -21,11 +21,11 @@
         <activity android:name=".MainActivity" />
         <activity android:name=".SignUpActivity" />
         <activity android:name=".Login" />
-        <activity android:name=".RecycTest" />
         <activity android:name=".ForgotPasswordActivity" />
         <activity android:name=".CompletionFormActivity" />
         <activity android:name=".BodyActivity" />
-        <activity android:name=".ListActivity"></activity>
+        <activity android:name=".ListActivity"
+                  android:theme="@style/BarTheme"></activity>
     </application>
 
 </manifest>

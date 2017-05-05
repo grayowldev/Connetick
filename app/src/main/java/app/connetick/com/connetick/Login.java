@@ -30,7 +30,7 @@ public class Login extends AppCompatActivity {
             @Override
             public void onClick(View view) {
 
-                Intent loginIntent = new Intent(Login.this, MainActivity.class);
+                Intent loginIntent = new Intent(Login.this, ListActivity.class);
                 startActivity(loginIntent);
             }
         });
@@ -39,6 +39,13 @@ public class Login extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 startActivity(new Intent(Login.this,ForgotPasswordActivity.class));
+            }
+        });
+
+        findViewById(R.id.signin_google_btn_signin).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(Login.this,ListActivity.class));
             }
         });
     }
