@@ -61,7 +61,7 @@ public class MainActivity extends AppCompatActivity {
         recycBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent toRecycActNtt = new Intent(MainActivity.this, RecycTest.class);
+                Intent toRecycActNtt = new Intent(MainActivity.this, ListActivity.class);
                 startActivity(toRecycActNtt);
             }
         });
