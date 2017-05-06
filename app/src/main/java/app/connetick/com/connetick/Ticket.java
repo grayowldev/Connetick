@@ -1,10 +1,12 @@
 package app.connetick.com.connetick;
 
+import java.io.Serializable;
+
 /**
  * Created by kwasi on 5/3/2017.
  */
 
-public class Ticket {
+public class Ticket implements Serializable{
     int id;
     String sender,subject,body;
     boolean accepted, completed;
