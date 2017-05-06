@@ -69,13 +69,13 @@
         android:textColor="@color/colorPrimary"
         android:textColorHint="@color/colorPrimary"
         android:textSize="18sp"
-        app:layout_constraintBottom_toTopOf="@+id/button"
+        app:layout_constraintBottom_toTopOf="@+id/finish_btn_completion"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent" />
 
     <Button
-        android:id="@+id/button"
+        android:id="@+id/finish_btn_completion"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginBottom="33dp"
